@@ -88,7 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
-    return await Geolocator.getCurrentPosition();
+    return await Geolocator.getCurrentPosition(
+        forceAndroidLocationManager: true);
   }
 
   @override
